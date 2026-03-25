@@ -251,6 +251,12 @@ h1, h2, h3, h4, h5, h6 { font-weight: 600; }
   transform: scale(1.05); filter: grayscale(0%) brightness(1.1);
 }
 
+/* Visibility Handling */
+.mobile-text, .mobile-icon { display: none; }
+.desktop-text { display: inline; }
+p.desktop-text { display: block; }
+.separator.desktop-text { display: inline; }
+
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .bento-hero { grid-template-columns: repeat(2, 1fr); padding: 5rem 1rem 2rem; gap: 1rem; }
@@ -266,23 +272,35 @@ h1, h2, h3, h4, h5, h6 { font-weight: 600; }
 }
 
 @media (max-width: 768px) {
-  /* Navigation - Native iOS App Header Style */
+  /* Visibility Handling Mobile */
+  .mobile-text, .mobile-icon { display: flex; align-items: center; justify-content: center; }
+  .desktop-text { display: none !important; }
+
+  /* Navigation - Floating iOS App Pill Style */
   .original-nav { 
-    padding: 1rem 1.2rem; 
+    position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%); width: calc(100% - 2rem); max-width: 400px;
+    padding: 0.8rem 1.5rem; 
     flex-direction: row; 
     justify-content: space-between; 
     align-items: center; 
-    background: rgba(7, 7, 9, 0.85); 
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    background: rgba(15, 15, 20, 0.75); 
+    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50px;
+    z-index: 1000;
   }
-  .nav-left h2 { font-size: 0.95rem; }
+  .nav-left { text-align: left; }
+  .nav-left h2 { font-size: 1.2rem; font-weight: 600; margin: 0; padding: 0; }
   .nav-left p { display: none; }
-  .nav-right { width: auto; flex-direction: row; justify-content: flex-end; gap: 0.8rem; }
-  .nav-links { display: flex; flex-direction: row; flex-wrap: nowrap; gap: 0.5rem; width: auto; }
-  .nav-links button { font-size: 0.7rem; letter-spacing: 0; }
-  .nav-links .separator { font-size: 0.7rem; }
-  .instagram-btn { transform: scale(0.85); }
+  
+  .nav-right { width: auto; flex-direction: row; justify-content: flex-end; gap: 1.2rem; align-items: center; }
+  .nav-links { display: flex; flex-direction: row; flex-wrap: nowrap; gap: 1.2rem; width: auto; align-items: center; }
+  .nav-links button { padding: 0; display:flex; align-items:center; opacity: 0.5; color: #fff; }
+  .nav-links button.active { opacity: 1; color: #fff; }
+  .nav-links .separator { display: none; }
+  
+  .instagram-btn { display:flex; align-items:center; transform: scale(1); opacity: 0.5; color: #fff; margin-left: 0.2rem; }
+  .instagram-btn:hover { opacity: 1; }
 
   /* Bento Grid - Tighter, Premium Mobile Stacking */
   .bento-wrapper { padding: 6rem 1rem 2rem; min-height: auto; }
