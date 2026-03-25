@@ -320,8 +320,23 @@ export default function App() {
   useEffect(() => {
     if (started && audioRef.current) {
       audioRef.current.volume = 0.2;
-      audioRef.current.play();
+      audioRef.current.play().catch(e => console.log("Audio play error:", e));
     }
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        if (audioRef.current) audioRef.current.pause();
+      } else {
+        if (started && audioRef.current) {
+          audioRef.current.play().catch(e => console.log("Audio resume error:", e));
+        }
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, [started]);
 
   useEffect(() => {
