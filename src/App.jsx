@@ -56,6 +56,13 @@ const WORKS = [
     link: "https://pavimun.vercel.app/",
     image: "/images/3.png",
     description: "Sitio web oficial donde se encuentra centralizada toda la información de la delegación del Modelo de Naciones Unidas PAVIMUN, detallando de forma interactiva los comités y eventos que conformaron su exitosa primera edición."
+  },
+  {
+    title: "Eatly APP",
+    role: "Desarrollador de la PWA",
+    link: "https://eatlyweb.vercel.app/",
+    image: "/images/eatly.png",
+    description: "Aplicación Web Progresiva (PWA) enfocada en la seguridad alimentaria. Utilizando escaneo instantáneo y comandos de voz, detecta riesgos dietéticos y sugiere alternativas seguras en segundos gracias a la integración con Open Food Facts."
   }
 ];
 
