@@ -330,7 +330,7 @@ p.desktop-text { display: block; }
   /* Works Section */
   .works-section-page { padding: 6rem 1rem 4rem; }
   .section-header h2 { font-size: 2.2rem; }
-  .works-container { gap: 3rem; }
+  .works-container { gap: 6rem; }
   .work-card, .work-card.reverse { flex-direction: column; gap: 1.2rem; }
   .work-image-wrapper { border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
   .work-info { padding: 0 0.5rem; gap: 0.8rem; }

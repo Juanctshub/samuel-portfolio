@@ -44,6 +44,13 @@ const TERMINAL_LINES = [
 
 const WORKS = [
   {
+    title: "KAMEMUN",
+    role: "Desarrollador de la Página Web",
+    link: "https://kamemun.vercel.app/",
+    image: "/images/kame.png",
+    description: "Plataforma oficial de la delegación independiente del Estado Lara. KAMEMUN rompe barreras académicas tradicionales, impulsando el talento universitario y demostrando que la diplomacia es una herramienta universal para todas las disciplinas."
+  },
+  {
     title: "Metanoia",
     role: "Desarrollador de la Página",
     link: "https://metanoiacontacto.lovable.app/",
